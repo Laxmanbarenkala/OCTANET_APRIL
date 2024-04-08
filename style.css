@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #225e69;
+  --secondary-color: #ff6f00;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  background-image: url("nature1.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  background-color: var(--primary-color);
+  z-index: 9;
+}
+
+label.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+label.logo span {
+  color: var(--secondary-color);
+}
+
+nav ul {
+  float: right;
+  margin-top: 5px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 25px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+a:hover {
+  color: var(--secondary-color);
+  transition: 0.5s;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+
+.content {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  max-width: calc(var(--max-width) / 2);
+  margin-inline: auto;
+  padding: 8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.content::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(1, 19, 27, 0.9);
+  z-index: -1;
+}
+
+.content h1 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4rem;
+  color: var(--white);
+}
+
+.content h4 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: var(--white);
+}
+
+.content h3 {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--secondary-color);
+}
+
+.content form {
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 450px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.content input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.content button {
+  padding: 5px 20px;
+  outline: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.content p {
+  margin-bottom: 4rem;
+  font-weight: 200;
+  color: var(--white);
+  line-height: 1.75rem;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials a {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.socials a:hover {
+  color: var(--white);
+}
+
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover {
+    background: none;
+    color: var(--secondary-color);
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+
+@media (width > 540px) {
+  .content h1 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
+
+  .content h4 {
+    font-size: 1.75rem;
+  }
+
+  .content h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (width > 768px) {
+  nav {
+    position: static;
+    background-color: rgba(1, 19, 27, 1);
+  }
+
+  .content {
+    padding: 5rem 1rem;
+    align-items: flex-start;
+    text-align: left;
+    margin-inline-start: unset;
+  }
+
+  .content h1 {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+
+  .content h4 {
+    font-size: 2rem;
+  }
+
+  .content h3 {
+    font-size: 2rem;
+  }
+
+  .content form {
+    margin-inline-start: unset;
+  }
+}
